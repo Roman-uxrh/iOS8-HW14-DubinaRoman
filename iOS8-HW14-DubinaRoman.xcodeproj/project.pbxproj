@@ -13,6 +13,8 @@
 		84508C95298E823100038DCF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84508C94298E823100038DCF /* Assets.xcassets */; };
 		84508C98298E823100038DCF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84508C96298E823100038DCF /* LaunchScreen.storyboard */; };
 		84508CA1298E833000038DCF /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 84508CA0298E833000038DCF /* SnapKit */; };
+		84508CA6298E8E6100038DCF /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84508CA5298E8E6100038DCF /* Cell.swift */; };
+		84508CA8298EE20300038DCF /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84508CA7298EE20300038DCF /* Header.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +25,8 @@
 		84508C94298E823100038DCF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		84508C97298E823100038DCF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84508C99298E823100038DCF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84508CA5298E8E6100038DCF /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
+		84508CA7298EE20300038DCF /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,9 +60,7 @@
 		84508C8A298E822E00038DCF /* iOS8-HW14-DubinaRoman */ = {
 			isa = PBXGroup;
 			children = (
-				84508C8B298E822E00038DCF /* AppDelegate.swift */,
-				84508C8D298E822E00038DCF /* SceneDelegate.swift */,
-				84508C8F298E822E00038DCF /* ViewController.swift */,
+				84508CA4298E88C900038DCF /* Sourse */,
 				84508CA2298E84C700038DCF /* Resourse */,
 			);
 			path = "iOS8-HW14-DubinaRoman";
@@ -72,6 +74,26 @@
 				84508C99298E823100038DCF /* Info.plist */,
 			);
 			path = Resourse;
+			sourceTree = "<group>";
+		};
+		84508CA3298E88AE00038DCF /* App */ = {
+			isa = PBXGroup;
+			children = (
+				84508C8B298E822E00038DCF /* AppDelegate.swift */,
+				84508C8D298E822E00038DCF /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		84508CA4298E88C900038DCF /* Sourse */ = {
+			isa = PBXGroup;
+			children = (
+				84508C8F298E822E00038DCF /* ViewController.swift */,
+				84508CA5298E8E6100038DCF /* Cell.swift */,
+				84508CA7298EE20300038DCF /* Header.swift */,
+				84508CA3298E88AE00038DCF /* App */,
+			);
+			path = Sourse;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,7 +172,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84508CA8298EE20300038DCF /* Header.swift in Sources */,
 				84508C90298E822E00038DCF /* ViewController.swift in Sources */,
+				84508CA6298E8E6100038DCF /* Cell.swift in Sources */,
 				84508C8C298E822E00038DCF /* AppDelegate.swift in Sources */,
 				84508C8E298E822E00038DCF /* SceneDelegate.swift in Sources */,
 			);
