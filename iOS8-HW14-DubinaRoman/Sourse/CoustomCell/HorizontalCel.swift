@@ -23,14 +23,15 @@ class HorizontalCel: UICollectionViewCell {
     
     lazy var firstLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 16, weight: .black)
+        label.font = UIFont.systemFont(ofSize: 14, weight: .regular)
         return label
     }()
     
     lazy var secondLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 16, weight: .black)
-        label.backgroundColor = .systemGray3
+        label.font = UIFont.systemFont(ofSize: 14, weight: .regular)
+//        label.tintColor = .systemGray3
+        label.textColor = .systemGray
         return label
     }()
     
@@ -45,7 +46,7 @@ class HorizontalCel: UICollectionViewCell {
         stack.axis = .horizontal
         stack.alignment = .center
         stack.distribution = .fill
-        stack.backgroundColor = .red
+        stack.backgroundColor = .white
         return stack
     }()
     
@@ -70,19 +71,30 @@ class HorizontalCel: UICollectionViewCell {
     
     private func setupHierarchy() {
         addSubview(stack)
-        stack.addArrangedSubview(firstLabel)
-        stack.addArrangedSubview(secondLabel)
         stack.addArrangedSubview(photoImage)
+        addSubview(firstLabel)
+        addSubview(secondLabel)
     }
     
     private func setupLayout() {
         stack.snp.makeConstraints { make in
-            make.top.right.left.bottom.equalToSuperview()
+            make.right.left.bottom.equalToSuperview().inset(15)
+            make.top.equalToSuperview()
         }
         
         photoImage.snp.makeConstraints { make in
             make.top.right.left.equalToSuperview()
             make.bottom.equalTo(contentView).offset(-25)
+        }
+        
+        firstLabel.snp.makeConstraints { make in
+            make.left.equalToSuperview().inset(10)
+            make.bottom.equalToSuperview().inset(13)
+        }
+        
+        secondLabel.snp.makeConstraints { make in
+            make.left.equalToSuperview().inset(10)
+            make.top.equalTo(firstLabel.snp.bottom).inset(5)
         }
     }
     

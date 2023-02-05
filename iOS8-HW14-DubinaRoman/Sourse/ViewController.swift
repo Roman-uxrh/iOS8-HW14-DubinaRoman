@@ -92,7 +92,7 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate, 
                 return cell ?? HorizontalCel()
             case 2, 3:
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: VerticalCell.id, for: indexPath) as? VerticalCell
-//                cell?.model = presenter?.model[indexPath.section][indexPath.item]
+                cell?.model = presenter?.model[indexPath.section][indexPath.item]
                 return cell ?? VerticalCell()
             default:
                 return UICollectionViewCell()
