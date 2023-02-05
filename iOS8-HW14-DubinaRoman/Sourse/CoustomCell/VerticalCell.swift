@@ -1,15 +1,15 @@
 //
-//  Cell.swift
+//  SecondCompositionalCell.swift
 //  iOS8-HW14-DubinaRoman
 //
-//  Created by admin on 04.02.2023.
+//  Created by admin on 05.02.2023.
 //
 
 import UIKit
 
-class CompositionalCell: UICollectionViewCell {
+class VerticalCell: UICollectionViewCell {
     
-    static let id = "CompositionalCell"
+    static let id = "VerticalCell"
     
     override init(frame: CGRect) {
         super.init(frame: frame)
