@@ -33,7 +33,7 @@ class MockModel {
                         Model(image: "square.stack.3d.down.right", firstLabel: "Серии", secondLabel: ""),
                         Model(image: "camera.viewfinder", firstLabel: "Снимки экрана", secondLabel: ""),
                         Model(image: "smallcircle.filled.circle", firstLabel: "Запись экрана", secondLabel: ""),
-                        Model(image: "square.stack.3d.forward.dottedline", firstLabel: "Анимированные", secondLabel: ""),],
+                        Model(image: "square.stack.3d.forward.dottedline", firstLabel: "Анимированные", secondLabel: "")],
                         
                         [Model(image: "square.and.arrow.down", firstLabel: "Импортированные", secondLabel: ""),
                         Model(image: "eye.slash", firstLabel: "Скрытые", secondLabel: ""),

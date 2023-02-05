@@ -49,7 +49,7 @@ extension ViewController {
                     
                     let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
                                                            heightDimension: .fractionalWidth(0.5))
-                    let layoutGroup = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, repeatingSubitem: layoutItem, count: 2)
+                    let layoutGroup = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, repeatingSubitem: layoutItem, count: 1)
                     
                     let sectionLayout = NSCollectionLayoutSection(group: layoutGroup)
                     sectionLayout.orthogonalScrollingBehavior = .paging
@@ -70,16 +70,15 @@ extension ViewController {
                 case 2:
                     // Media Types
                     let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
-                                                          heightDimension: .fractionalHeight(44))
+                                                          heightDimension: .absolute(44))
                     let layoutItem = NSCollectionLayoutItem(layoutSize: itemSize)
-//                    layoutItem.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5)
+                    layoutItem.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 0, bottom: 5, trailing: 0)
                     
                     let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
-                                                           heightDimension: .estimated(400))
+                                                           heightDimension: .fractionalHeight(0.5))
                     let layoutGroup = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, repeatingSubitem: layoutItem, count: 9)
                     
                     let sectionLayout = NSCollectionLayoutSection(group: layoutGroup)
-//                    sectionLayout.orthogonalScrollingBehavior = .paging
                     
                     let layoutSectionHeaderSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.98),
                                                                         heightDimension: .estimated(40))
@@ -97,20 +96,18 @@ extension ViewController {
                 case 3:
                     // Utilites
                     let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
-                                                          heightDimension: .fractionalWidth(1))
+                                                          heightDimension: .absolute(44))
                     let layoutItem = NSCollectionLayoutItem(layoutSize: itemSize)
-                    layoutItem.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5)
+                    layoutItem.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 0, bottom: 5, trailing: 0)
                     
-                    let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5),
-                                                           heightDimension: .fractionalWidth(1))
-                    let layoutGroup = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, repeatingSubitem: layoutItem, count: 2)
-        //            layoutGroup.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 2.5, bottom: 0, trailing: 2.5)
+                    let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
+                                                           heightDimension: .fractionalHeight(0.2))
+                    let layoutGroup = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, repeatingSubitem: layoutItem, count: 3)
                     
                     let sectionLayout = NSCollectionLayoutSection(group: layoutGroup)
-                    sectionLayout.orthogonalScrollingBehavior = .paging
                     
                     let layoutSectionHeaderSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.98),
-                                                                         heightDimension: .estimated(40))
+                                                                        heightDimension: .estimated(40))
                     let layoutSectionHeader = NSCollectionLayoutBoundarySupplementaryItem(
                                                                         layoutSize: layoutSectionHeaderSize,
                                                                         elementKind: UICollectionView.elementKindSectionHeader,

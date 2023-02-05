@@ -71,18 +71,32 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate, 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch section {
             case 0:
-                return presenter?.model.first?.count ?? 0
+                return presenter?.model[section].count ?? 0
             case 1:
-                return 1
+                return presenter?.model[section].count ?? 0
+            case 2:
+                return presenter?.model[section].count ?? 0
+            case 3:
+                return presenter?.model[section].count ?? 0
             default:
                 return 0
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HorizontalCel.id, for: indexPath) as? HorizontalCel
-        cell?.model = presenter?.model[indexPath.section][indexPath.item]
-        return cell ?? HorizontalCel()
+        
+        switch indexPath.section {
+            case 0, 1:
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HorizontalCel.id, for: indexPath) as? HorizontalCel
+                cell?.model = presenter?.model[indexPath.section][indexPath.item]
+                return cell ?? HorizontalCel()
+            case 2, 3:
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: VerticalCell.id, for: indexPath) as? VerticalCell
+//                cell?.model = presenter?.model[indexPath.section][indexPath.item]
+                return cell ?? VerticalCell()
+            default:
+                return UICollectionViewCell()
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
