@@ -100,9 +100,28 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate, 
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: Header.id, for: indexPath) as? Header
-        header?.title.text = "Hello"
-        return header ?? Header()
+        switch indexPath.section {
+            case 0:
+                let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: Header.id, for: indexPath) as? Header
+                header?.title.text = "Мои альбомы"
+                return header ?? Header()
+            case 1:
+                let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: Header.id, for: indexPath) as? Header
+                header?.title.text = "Общие альбомы"
+                return header ?? Header()
+            case 2:
+                let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: Header.id, for: indexPath) as? Header
+                header?.title.text = "Типы медиафайлов"
+                header?.buttom.setTitleColor(.white, for: .normal)
+                return header ?? Header()
+            case 3:
+                let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: Header.id, for: indexPath) as? Header
+                header?.title.text = "Другое"
+                header?.buttom.setTitleColor(.white, for: .normal)
+                return header ?? Header()
+            default:
+                return UICollectionReusableView()
+        }
     }
 }
 

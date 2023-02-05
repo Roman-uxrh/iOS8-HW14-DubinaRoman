@@ -30,7 +30,7 @@ class VerticalCell: UICollectionViewCell {
     
     private let firstLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 18, weight: .regular)
+        label.font = UIFont.systemFont(ofSize: 22, weight: .regular)
         label.textColor = .systemBlue
         return label
     }()
@@ -43,11 +43,24 @@ class VerticalCell: UICollectionViewCell {
         return label
     }()
     
+    private let imageIconRight: UIImageView = {
+        let image = UIImageView(image: UIImage(systemName: "chevron.right"))
+        image.contentMode = .scaleAspectFit
+        image.clipsToBounds = true
+        image.tintColor = .systemGray2
+        return image
+    }()
+    
+    private lazy var line: UIView = {
+        let line = UIView()
+        line.backgroundColor = .systemGray4
+        return line
+    }()
+    
     // MARK: - Initializers
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-//        backgroundColor =
         setupHierarchy()
         setupLayout()
     }
@@ -62,12 +75,14 @@ class VerticalCell: UICollectionViewCell {
         addSubview(imageIconLeft)
         addSubview(firstLabel)
         addSubview(secondLabel)
+        addSubview(imageIconRight)
+        addSubview(line)
     }
     
     private func setupLayout() {
         imageIconLeft.snp.makeConstraints { make in
-            make.left.equalToSuperview().offset(10)
-            make.width.height.equalTo(32)
+            make.left.equalToSuperview()
+            make.width.height.equalTo(27)
             make.centerY.equalToSuperview()
         }
         
@@ -78,8 +93,21 @@ class VerticalCell: UICollectionViewCell {
         
         secondLabel.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
-            make.right.equalToSuperview().inset(35)
+            make.right.equalToSuperview().inset(40)
             make.width.equalTo(150)
+        }
+        
+        imageIconRight.snp.makeConstraints { make in
+            make.left.equalTo(secondLabel.snp.right).inset(-5)
+            make.width.height.equalTo(17)
+            make.centerY.equalToSuperview()
+        }
+        
+        line.snp.makeConstraints { make in
+            make.height.equalTo(1)
+            make.top.equalTo(firstLabel.snp.bottom).inset(-10)
+            make.left.equalTo(firstLabel.snp.left)
+            make.right.equalToSuperview()
         }
     }
     

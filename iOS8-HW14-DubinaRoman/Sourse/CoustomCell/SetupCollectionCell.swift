@@ -36,7 +36,7 @@ extension ViewController {
                     
                     sectionLayout.boundarySupplementaryItems = [layoutSectionHeader]
                     sectionLayout.contentInsets = NSDirectionalEdgeInsets(top: 0,
-                                                                          leading: 0,
+                                                                          leading: 15,
                                                                           bottom: 20,
                                                                           trailing: 0)
                         return sectionLayout
@@ -63,14 +63,14 @@ extension ViewController {
                     
                     sectionLayout.boundarySupplementaryItems = [layoutSectionHeader]
                     sectionLayout.contentInsets = NSDirectionalEdgeInsets(top: 0,
-                                                                          leading: 0,
+                                                                          leading: 15,
                                                                           bottom: 20,
                                                                           trailing: 0)
                         return sectionLayout
                 case 2:
                     // Media Types
                     let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
-                                                          heightDimension: .absolute(44))
+                                                          heightDimension: .absolute(46))
                     let layoutItem = NSCollectionLayoutItem(layoutSize: itemSize)
                     layoutItem.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 0, bottom: 5, trailing: 0)
                     
@@ -89,14 +89,14 @@ extension ViewController {
                     
                     sectionLayout.boundarySupplementaryItems = [layoutSectionHeader]
                     sectionLayout.contentInsets = NSDirectionalEdgeInsets(top: 0,
-                                                                          leading: 0,
+                                                                          leading: 15,
                                                                           bottom: 20,
                                                                           trailing: 0)
                         return sectionLayout
                 case 3:
                     // Utilites
                     let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
-                                                          heightDimension: .absolute(44))
+                                                          heightDimension: .absolute(46))
                     let layoutItem = NSCollectionLayoutItem(layoutSize: itemSize)
                     layoutItem.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 0, bottom: 5, trailing: 0)
                     
@@ -115,7 +115,7 @@ extension ViewController {
                     
                     sectionLayout.boundarySupplementaryItems = [layoutSectionHeader]
                     sectionLayout.contentInsets = NSDirectionalEdgeInsets(top: 0,
-                                                                          leading: 0,
+                                                                          leading: 15,
                                                                           bottom: 20,
                                                                           trailing: 0)
                         return sectionLayout
@@ -141,7 +141,7 @@ extension ViewController {
                     
                     sectionLayout.boundarySupplementaryItems = [layoutSectionHeader]
                     sectionLayout.contentInsets = NSDirectionalEdgeInsets(top: 0,
-                                                                          leading: 0,
+                                                                          leading: 15,
                                                                           bottom: 20,
                                                                           trailing: 0)
                         return sectionLayout
