@@ -23,29 +23,31 @@ class HorizontalCel: UICollectionViewCell {
     
     lazy var firstLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 16, weight: .black)
+        label.font = UIFont.systemFont(ofSize: 14, weight: .regular)
         return label
     }()
     
     lazy var secondLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 16, weight: .black)
-        label.backgroundColor = .systemGray3
+        label.font = UIFont.systemFont(ofSize: 14, weight: .regular)
+        label.textColor = .systemGray
         return label
     }()
     
     lazy var photoImage: UIImageView = {
         let image = UIImageView()
-        image.contentMode = .scaleAspectFit
+        image.contentMode = .scaleAspectFill
+        image.clipsToBounds = true
+        image.layer.cornerRadius = 6
         return image
     }()
     
     lazy var stack: UIStackView = {
         let stack = UIStackView()
-        stack.axis = .horizontal
+        stack.axis = .vertical
         stack.alignment = .center
-        stack.distribution = .fill
-        stack.backgroundColor = .red
+        stack.distribution = .equalCentering
+        stack.backgroundColor = .white
         return stack
     }()
     
@@ -65,30 +67,42 @@ class HorizontalCel: UICollectionViewCell {
     // MARK: - Setups
     
     private func setupView() {
-        backgroundColor = .red
+        backgroundColor = .white
     }
     
     private func setupHierarchy() {
         addSubview(stack)
-        stack.addArrangedSubview(firstLabel)
-        stack.addArrangedSubview(secondLabel)
         stack.addArrangedSubview(photoImage)
+        addSubview(firstLabel)
+        addSubview(secondLabel)
     }
     
     private func setupLayout() {
         stack.snp.makeConstraints { make in
-            make.top.right.left.bottom.equalToSuperview()
+            make.right.left.bottom.equalToSuperview().inset(15)
+            make.top.equalToSuperview()
+            make.left.equalToSuperview()
         }
         
         photoImage.snp.makeConstraints { make in
             make.top.right.left.equalToSuperview()
             make.bottom.equalTo(contentView).offset(-25)
         }
+        
+        firstLabel.snp.makeConstraints { make in
+            make.left.equalToSuperview()
+            make.bottom.equalToSuperview().inset(10)
+        }
+        
+        secondLabel.snp.makeConstraints { make in
+            make.left.equalToSuperview()
+            make.top.equalTo(firstLabel.snp.bottom)
+        }
     }
     
-//    override func prepareForReuse() {
-//        super.prepareForReuse()
-//
-//    }
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        self.model = nil
+    }
 }
 

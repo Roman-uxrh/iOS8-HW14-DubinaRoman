@@ -15,8 +15,24 @@ class Header: UICollectionReusableView {
     
     lazy var title: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 25, weight: .bold)
+        label.font = UIFont.systemFont(ofSize: 22, weight: .bold)
         return label
+    }()
+    
+    private lazy var line: UIView = {
+        let line = UIView()
+        line.backgroundColor = .systemGray4
+        return line
+    }()
+    
+    lazy var buttom: UIButton = {
+        let button = UIButton()
+        button.setTitle("Все", for: .normal)
+        button.setTitleColor(.systemBlue, for: .normal)
+        button.titleLabel?.font = UIFont(name: "Inter-Bold", size: 14)
+        button.layer.cornerRadius = 25
+        button.backgroundColor = .white
+        return button
     }()
     
     // MARK: - Initializers
@@ -40,12 +56,26 @@ class Header: UICollectionReusableView {
     
     private func setupHierarchy() {
         addSubview(title)
+        addSubview(line)
+        addSubview(buttom)
     }
     
     private func setupLayout() {
         title.snp.makeConstraints { make in
             make.bottom.equalTo(self)
             make.left.equalTo(self)
+        }
+        
+        line.snp.makeConstraints { make in
+            make.height.equalTo(1)
+            make.top.equalTo(title.snp.top).inset(-10)
+            make.left.equalTo(self)
+            make.right.equalToSuperview()
+        }
+        
+        buttom.snp.makeConstraints { make in
+            make.bottom.equalTo(self)
+            make.right.equalToSuperview().inset(10)
         }
     }
     

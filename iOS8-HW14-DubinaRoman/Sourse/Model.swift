@@ -23,7 +23,7 @@ class MockModel {
                         Model(image: "image6", firstLabel: "Viber", secondLabel: ""),
                         Model(image: "image7", firstLabel: "Tellegram", secondLabel: "")],
                         
-                        [Model(image: "image8", firstLabel: "Семья", secondLabel: "Автор: Руслан Д")],
+                        [Model(image: "image8", firstLabel: "Семья", secondLabel: "")],
                         
                         [Model(image: "video", firstLabel: "Видео", secondLabel: ""),
                         Model(image: "person.crop.square", firstLabel: "Селфи", secondLabel: ""),
@@ -39,8 +39,6 @@ class MockModel {
                         Model(image: "eye.slash", firstLabel: "Скрытые", secondLabel: ""),
                         Model(image: "trash", firstLabel: "Недавно удаленные", secondLabel: "")]
                                 ]
-    
-    private let mockTable = [[]]
     
     func getData() -> [[Model]] {
         return mockCollection
