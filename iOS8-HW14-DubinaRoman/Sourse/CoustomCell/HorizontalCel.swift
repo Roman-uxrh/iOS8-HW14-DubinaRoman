@@ -30,22 +30,23 @@ class HorizontalCel: UICollectionViewCell {
     lazy var secondLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 14, weight: .regular)
-//        label.tintColor = .systemGray3
         label.textColor = .systemGray
         return label
     }()
     
     lazy var photoImage: UIImageView = {
         let image = UIImageView()
-        image.contentMode = .scaleAspectFit
+        image.contentMode = .scaleAspectFill
+        image.clipsToBounds = true
+        image.layer.cornerRadius = 6
         return image
     }()
     
     lazy var stack: UIStackView = {
         let stack = UIStackView()
-        stack.axis = .horizontal
+        stack.axis = .vertical
         stack.alignment = .center
-        stack.distribution = .fill
+        stack.distribution = .equalCentering
         stack.backgroundColor = .white
         return stack
     }()
@@ -66,7 +67,7 @@ class HorizontalCel: UICollectionViewCell {
     // MARK: - Setups
     
     private func setupView() {
-        backgroundColor = .red
+        backgroundColor = .white
     }
     
     private func setupHierarchy() {
@@ -80,6 +81,7 @@ class HorizontalCel: UICollectionViewCell {
         stack.snp.makeConstraints { make in
             make.right.left.bottom.equalToSuperview().inset(15)
             make.top.equalToSuperview()
+            make.left.equalToSuperview()
         }
         
         photoImage.snp.makeConstraints { make in
@@ -88,19 +90,19 @@ class HorizontalCel: UICollectionViewCell {
         }
         
         firstLabel.snp.makeConstraints { make in
-            make.left.equalToSuperview().inset(10)
-            make.bottom.equalToSuperview().inset(13)
+            make.left.equalToSuperview()
+            make.bottom.equalToSuperview().inset(10)
         }
         
         secondLabel.snp.makeConstraints { make in
-            make.left.equalToSuperview().inset(10)
-            make.top.equalTo(firstLabel.snp.bottom).inset(5)
+            make.left.equalToSuperview()
+            make.top.equalTo(firstLabel.snp.bottom)
         }
     }
     
-//    override func prepareForReuse() {
-//        super.prepareForReuse()
-//
-//    }
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        self.model = nil
+    }
 }
 

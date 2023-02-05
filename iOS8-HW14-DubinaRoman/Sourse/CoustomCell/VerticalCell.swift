@@ -115,8 +115,7 @@ class VerticalCell: UICollectionViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-//        self.accessoryType = .none
-//        self.model = nil
+        self.model = nil
     }
 }
 
