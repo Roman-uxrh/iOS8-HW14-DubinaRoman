@@ -100,6 +100,8 @@ class HorizontalCel: UICollectionViewCell {
         }
     }
     
+    // MARK: - Reuse
+    
     override func prepareForReuse() {
         super.prepareForReuse()
         self.model = nil
